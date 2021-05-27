@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../js/average.js"></script>
+    <link rel="stylesheet" href="../style/durchschnittStyle.css">
 </head>
 
 <body>
@@ -14,6 +16,22 @@
         <h1>
             Ich kann den Durchschnitt berechnen
         </h1>
+        <br>
+        <button type="button" onclick="calculateAverage()" class="btn btn-secondary" id="calculateAverage">Durchschnitt
+            berechnen</button>
+        <button type="button" onclick="window.location.reload()" class="btn btn-secondary" id="clearPage">Felder
+            leeren</button>
+        <button type="button" onclick="addColum()" class="btn btn-secondary" id="addColum">Spalte hinzufügen</button>
+
+        <br>
+        <div class="row" id="averageDiv">
+            <div class="col-md-1">
+                <label for="average" id="averageLabel">Durchschnitt: </label>
+            </div>
+            <div class="col-md-6">
+                <input type="text" readonly id="average" class="form-control">
+            </div>
+        </div>
         <br>
         <div class="row-jusify-content-center">
             <div class="row">
