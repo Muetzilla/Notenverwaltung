@@ -3,5 +3,5 @@ function calculateAverage(){
 }
 function addColum(){
    var notenDiv = document.getElementById("noten");
-   notenDiv.append("New row");
+   notenDiv.append("New row ");
 }
