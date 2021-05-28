@@ -22,3 +22,9 @@ margin-right: 10px;
 .correctNoteInput{
     border-color: green;
 }
+body{
+    background-color: #454545;
+}
+.notenInput{
+    margin-bottom: 2%;
+}
