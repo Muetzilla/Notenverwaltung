@@ -1,25 +1,25 @@
 function calculateAverage() {
     var averageInput = document.getElementById("average");
-    var idnumber;
-    var inputVal;
+    var idnumber = 0;
+    var inputVal = 1;
     var inputValField;
-    var inputGewichtung;
+    var inputGewichtung = 0;
     var inputGewichtungFiled;
-    var stringElementNoteId;
-    var stringElementGewichtungId;
-    var calculationAverageNote;
-    var calculateAverageGewichtung;
+    var stringElementNoteId = "";
+    var stringElementGewichtungId = "";
+    var calculationAverageNote = 0;
+    var calculateAverageGewichtung = 0;
     var inputs = document.getElementsByClassName("notenInput");
+    var averageResult = 0;
     for (var i = 0, length = inputs.length; i < length; i++) {
         idnumber = i + 1;
         stringElementNoteId = "inputNote" + idnumber;
         stringElementGewichtungId = "inputWert" + idnumber;
         inputValField = document.getElementById(stringElementNoteId);
-        inputGewichtung = document.getElementById(stringElementGewichtungId);
-        console.log(inputGewichtungFiled);
-        console.log(inputGewichtung);
-        console.log(inputVal);
-        console.log(inputValField);
+        inputGewichtungFiled = document.getElementById(stringElementGewichtungId);
+      //  console.log(inputGewichtungFiled);
+      //  console.log(inputValField);
+     // inputVal = document.getElementById(stringElementNoteId).value;
         if (inputVal > 6 || inputVal < 1) {
             inputValField.classList.remove("correctNoteInput");
             inputValField.className += " wrongNoteInput";
@@ -29,17 +29,23 @@ function calculateAverage() {
             if (inputVal != "") {
                 inputGewichtung = document.getElementById(stringElementGewichtungId).value;
                 inputVal = document.getElementById(stringElementNoteId).value;
-                calculationAverageNote += inputVal * (inputGewichtung / 100);
+                inputGewichtung /= 100;
+                console.log("Eingabe Gewichtung: " + inputGewichtung);
+                console.log("Eingabe Note: " + inputVal);
+                calculationAverageNote += (inputVal * inputGewichtung);
                 calculateAverageGewichtung += inputGewichtung;
-                console.log("Gewichtung: " + calculateAverageGewichtung);
-                console.log("Note: " + calculationAverageNote);
+                console.log("Gewichtung Berechnung: " + calculateAverageGewichtung);
+                console.log("Note Berechnung: " + calculationAverageNote);
             } else {
 
             }
+          
         }
     }
-    console.log(calculationAverageNote / calculateAverageGewichtung);
-    averageInput.value = calculationAverageNote / calculateAverageGewichtung;
+    averageResult = calculationAverageNote / calculateAverageGewichtung;
+    console.log("Durchschnitt: " + averageResult);
+    console.log("Durchschnitt formatiert: " + averageResult.toFixed(2));
+    averageInput.value = averageResult.toFixed(2);
 
 
 
