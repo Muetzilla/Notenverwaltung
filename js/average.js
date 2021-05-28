@@ -52,5 +52,7 @@ function calculateAverage() {
 }
 function addColum() {
     var notenDiv = document.getElementById("noten");
-    notenDiv.append("New row");
+    var inputs = document.getElementsByClassName("notenInput");
+    var amountInputFileds = inputs.length + 1;
+    notenDiv.innerHTML += '<div class="row notenInput"><div class="col-md-6"><input class="form-control" type="number" id="inputNote'+amountInputFileds + '"placeholder="Note..."></div><div class="col-md-5"><input class="form-control" type="number" id="inputWert'+amountInputFileds+'" value="100"></div></div>';
 }
