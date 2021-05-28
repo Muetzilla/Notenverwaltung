@@ -11,6 +11,7 @@ function calculateAverage() {
     var calculateAverageGewichtung = 0;
     var inputs = document.getElementsByClassName("notenInput");
     var averageResult = 0;
+    var roundAHalfBox = document.getElementById("roundAHalf");
     for (var i = 0, length = inputs.length; i < length; i++) {
         idnumber = i + 1;
         stringElementNoteId = "inputNote" + idnumber;
@@ -45,6 +46,9 @@ function calculateAverage() {
     averageResult = calculationAverageNote / calculateAverageGewichtung;
     console.log("Durchschnitt: " + averageResult);
     console.log("Durchschnitt formatiert: " + averageResult.toFixed(2));
+    if(document.getElementById("roundAHalf").checked){
+       averageResult = Math.floor(averageResult * 10) / 10;
+    }
     averageInput.value = averageResult.toFixed(2);
 
 
