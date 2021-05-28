@@ -16,3 +16,9 @@ margin-right: 10px;
 #average{
     margin-left:15px;
 }
+.wrongNoteInput{
+    border-color: red;
+}
+.correctNoteInput{
+    border-color: green;
+}
