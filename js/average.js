@@ -47,7 +47,7 @@ function calculateAverage() {
     console.log("Durchschnitt: " + averageResult);
     console.log("Durchschnitt formatiert: " + averageResult.toFixed(2));
     if(document.getElementById("roundAHalf").checked){
-       averageResult = Math.floor(averageResult * 10) / 10;
+       averageResult = Math.round(averageResult * 2) / 2;
     }
     averageInput.value = averageResult.toFixed(2);
 
